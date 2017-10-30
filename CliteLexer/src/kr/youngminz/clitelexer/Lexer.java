@@ -164,16 +164,20 @@ public class Lexer {
 
                 // NOTE: 첫 번째 글자는 읽었다. 두 번째 문자가 무엇이냐에 따라 잘 처신하면 된다.
                 case '=':
-                    return chkOpt('=', Token.assignTok, Token.eqeqTok);
+                    ch = nextChar();
+                    return chkOpt(ch, Token.assignTok, Token.eqeqTok);
 
                 case '<':
-                    return chkOpt('<', Token.ltTok, Token.lteqTok);
+                    ch = nextChar();
+                    return chkOpt(ch, Token.ltTok, Token.lteqTok);
 
                 case '>':
-                    return chkOpt('>', Token.gtTok, Token.gteqTok);
+                    ch = nextChar();
+                    return chkOpt(ch, Token.gtTok, Token.gteqTok);
 
                 case '!':
-                    return chkOpt('!', Token.notTok, Token.noteqTok);
+                    ch = nextChar();
+                    return chkOpt(ch, Token.notTok, Token.noteqTok);
 
                 default:
                     error("Illegal character " + ch);
@@ -202,8 +206,10 @@ public class Lexer {
         } else if (two.value().length() == 1) {
             return two;
         } else if (one.value().length() > 1 && one.value().charAt(1) == c) {
+            ch = nextChar();
             return one;
         } else if (two.value().length() > 1 && two.value().charAt(1) == c) {
+            ch = nextChar();
             return two;
         } else {
             error("Unknown operator (from Lexer.choOpt)");

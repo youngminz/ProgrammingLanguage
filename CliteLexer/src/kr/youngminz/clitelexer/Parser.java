@@ -48,7 +48,10 @@ public class Parser {
         match(TokenType.LeftBrace);
 
         declarations();
-        statements();
+
+        while (!token.type().equals(TokenType.RightBrace)) {
+            statement();
+        }
 
         match(TokenType.RightBrace);
         return null;  // TODO student exercise
@@ -108,21 +111,56 @@ public class Parser {
 
     private Statement statement() {
         // Statement --> ; | Block | Assignment | IfStatement | WhileStatement
-        Statement s = new Skip();
-        // TODO student exercise
-        return s;
+        if (token.type().equals(TokenType.Semicolon)) { // ;
+            return new Skip();
+        } else if (token.type().equals(TokenType.LeftBrace)) { // Block
+            return block();
+        } else if (token.type().equals(TokenType.Identifier)) { // Assignment
+            return assignment();
+        } else if (token.value().equals("if")) {
+            return ifStatement();
+        } else if (token.value().equals("while")) {
+            return whileStatement();
+        } else {
+            error("Statement");
+            return null;
+        }
     }
 
-    private Block statements() {
+    private Block block() {
         // Block --> '{' Statements '}'
+
+        if (!token.type().equals(TokenType.LeftBrace)) {
+            error(TokenType.LeftBrace);
+        }
         Block b = new Block();
-        // TODO student exercise
+        while (!token.type().equals(TokenType.RightBrace)) {
+            b.members.add(statement());
+        }
+
+        token = lexer.next();
+
         return b;
     }
 
     private Assignment assignment() {
         // Assignment --> Identifier = Expression ;
-        return null;  // TODO student exercise
+        String id = token.value();
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.Assign)) {
+            error(TokenType.Assign);
+        }
+        token = lexer.next();
+
+        Expression exp = expression();
+
+        if (!token.type().equals(TokenType.Semicolon)) {
+            error(TokenType.Assign);
+        }
+        token = lexer.next();
+
+        return new Assignment(new Variable(id), exp);
     }
 
     private Conditional ifStatement() {
@@ -137,22 +175,56 @@ public class Parser {
 
     private Expression expression() {
         // Expression --> Conjunction { || Conjunction }
-        return null;  // TODO student exercise
+        Expression lhs, rhs;
+
+        lhs = conjunction();
+        if (!token.type().equals(TokenType.Or)) {
+            return lhs;
+        }
+
+        rhs = conjunction();
+        return new Binary(new Operator(Operator.OR), lhs, rhs);
     }
 
     private Expression conjunction() {
         // Conjunction --> Equality { && Equality }
-        return null;  // TODO student exercise
+        Expression lhs, rhs;
+
+        lhs = equality();
+        if (!token.type().equals(TokenType.And)) {
+            return lhs;
+        }
+
+        rhs = equality();
+        return new Binary(new Operator(Operator.AND), lhs, rhs);
     }
 
     private Expression equality() {
         // Equality --> Relation [ EquOp Relation ]
-        return null;  // TODO student exercise
+        Expression lhs, rhs;
+
+        lhs = relation();
+        if (!isEqualityOp()) {
+            return lhs;
+        }
+        String op = token.value();
+
+        rhs = relation();
+        return new Binary(new Operator(op), lhs, rhs);
     }
 
     private Expression relation() {
         // Relation --> Addition [RelOp Addition]
-        return null;  // TODO student exercise
+        Expression lhs, rhs;
+
+        lhs = addition();
+        if (!isRelationalOp()) {
+            return lhs;
+        }
+        String op = token.value();
+
+        rhs = addition();
+        return new Binary(new Operator(op), lhs, rhs);
     }
 
     private Expression addition() {
@@ -209,7 +281,22 @@ public class Parser {
     }
 
     private Value literal() {
-        return null;  // TODO student exercise
+        if (token.type().equals(TokenType.IntLiteral)) {
+            IntValue value = new IntValue(Integer.parseInt(token.value()));
+            token = lexer.next();
+            return value;
+        } else if (token.type().equals(TokenType.CharLiteral)) {
+            CharValue value = new CharValue(token.value().charAt(0));
+            token = lexer.next();
+            return value;
+        } else if (token.type().equals(TokenType.FloatLiteral)) {
+            FloatValue value = new FloatValue(Float.parseFloat(token.value()));
+            token = lexer.next();
+            return value;
+        } else {
+            error("Literal");
+            return null;
+        }
     }
 
     private boolean isAddOp() {
