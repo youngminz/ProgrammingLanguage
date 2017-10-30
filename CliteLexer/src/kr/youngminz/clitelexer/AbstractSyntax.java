@@ -1,4 +1,4 @@
-package kr.youngminz;
+package kr.youngminz.clitelexer;
 
 // Abstract syntax for the language C++Lite,
 // exactly as it appears in Appendix B.
@@ -13,6 +13,10 @@ class Program {
     Program(Declarations d, Block b) {
         decpart = d;
         body = b;
+    }
+
+    void display() {
+        System.out.println("AST를 출력해야 함");
     }
 
 }

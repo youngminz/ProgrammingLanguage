@@ -1,4 +1,4 @@
-package kr.youngminz;
+package kr.youngminz.clitelexer;
 
 public class Parser {
     // Recursive descent parser that inputs a C++Lite program and 
@@ -12,13 +12,8 @@ public class Parser {
     public Parser(Lexer ts) { // Open the C++Lite source program
         lexer = ts;                          // as a token stream, and
         token = lexer.next();            // retrieve its first Token
+        System.out.println(token);
     }
-
-    public static void main(String args[]) {
-        Parser parser = new Parser(new Lexer(args[0]));
-        Program prog = parser.program();
-        prog.display();           // display abstract syntax tree
-    } //main
 
     private String match(TokenType t) { // * return the string of a token if it matches with t *
         String value = token.value();
@@ -45,78 +40,77 @@ public class Parser {
         // Program --> void main ( ) '{' Declarations Statements '}'
         TokenType[] header = {TokenType.Int, TokenType.Main,
                 TokenType.LeftParen, TokenType.RightParen};
-        for (int i = 0; i < header.length; i++)   // bypass "int main ( )"
-            match(header[i]);
+        for (TokenType aHeader : header) match(aHeader);
         match(TokenType.LeftBrace);
-        // student exercise
+        // TODO 이 사이에 프로그램이 들어간다.
         match(TokenType.RightBrace);
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Declarations declarations() {
         // Declarations --> { Declaration }
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private void declaration(Declarations ds) {
         // Declaration  --> Type Identifier { , Identifier } ;
-        // student exercise
+        // TODO student exercise
     }
 
     private Type type() {
         // Type  -->  int | bool | float | char
         Type t = null;
-        // student exercise
+        // TODO student exercise
         return t;
     }
 
     private Statement statement() {
         // Statement --> ; | Block | Assignment | IfStatement | WhileStatement
         Statement s = new Skip();
-        // student exercise
+        // TODO student exercise
         return s;
     }
 
     private Block statements() {
         // Block --> '{' Statements '}'
         Block b = new Block();
-        // student exercise
+        // TODO student exercise
         return b;
     }
 
     private Assignment assignment() {
         // Assignment --> Identifier = Expression ;
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Conditional ifStatement() {
         // IfStatement --> if ( Expression ) Statement [ else Statement ]
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Loop whileStatement() {
         // WhileStatement --> while ( Expression ) Statement
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Expression expression() {
         // Expression --> Conjunction { || Conjunction }
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Expression conjunction() {
         // Conjunction --> Equality { && Equality }
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Expression equality() {
         // Equality --> Relation [ EquOp Relation ]
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Expression relation() {
         // Relation --> Addition [RelOp Addition]
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private Expression addition() {
@@ -173,7 +167,7 @@ public class Parser {
     }
 
     private Value literal() {
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private boolean isAddOp() {

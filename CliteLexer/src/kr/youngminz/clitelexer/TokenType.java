@@ -1,4 +1,4 @@
-package kr.youngminz;
+package kr.youngminz.clitelexer;
 
 public enum TokenType {
      Bool, Char, Else, False, Float,

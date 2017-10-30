@@ -1,4 +1,4 @@
-package kr.youngminz;
+package kr.youngminz.clitelexer;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -21,6 +21,7 @@ public class Lexer {
 
 
     public Lexer(String fileName) { // source filename
+        System.out.println(System.getProperty("user.dir"));
         try {
             input = new BufferedReader(new FileReader(fileName));
         } catch (FileNotFoundException e) {
@@ -77,6 +78,8 @@ public class Lexer {
                 case '\t':
                 case '\r':
                 case eolnCh:
+                    // NOTE: 소스 코드를 읽는 중 무시할 수 있는 문자들임.
+                    // 그냥 Discard 하고 다음 문자를 읽으면 됨.
                     ch = nextChar();
                     break;
 
@@ -84,6 +87,7 @@ public class Lexer {
                     ch = nextChar();
                     if (ch != '/') return Token.divideTok;
                     // comment
+                    // NOTE: /를 읽었는데 다음 문자도 /이면, 주석으로 처리하고 End of Line 까지 읽으면 됨.
                     do {
                         ch = nextChar();
                     } while (ch != eolnCh);
@@ -103,7 +107,39 @@ public class Lexer {
                     ch = nextChar();
                     return Token.plusTok;
 
+                // NOTE: 이렇게 그냥 체크 안 하고 읽기만 해도 되나.....?
                 // - * ( ) { } ; ,  student exercise
+                case '-':
+                    ch = nextChar();
+                    return Token.minusTok;
+
+                case '*':
+                    ch = nextChar();
+                    return Token.multiplyTok;
+
+                case '(':
+                    ch = nextChar();
+                    return Token.leftParenTok;
+
+                case ')':
+                    ch = nextChar();
+                    return Token.rightParenTok;
+
+                case '{':
+                    ch = nextChar();
+                    return Token.leftBraceTok;
+
+                case '}':
+                    ch = nextChar();
+                    return Token.rightBraceTok;
+
+                case ';':
+                    ch = nextChar();
+                    return Token.semicolonTok;
+
+                case ',':
+                    ch = nextChar();
+                    return Token.commaTok;
 
                 case '&':
                     check('&');
@@ -115,7 +151,9 @@ public class Lexer {
                 case '=':
                     return chkOpt('=', Token.assignTok,
                             Token.eqeqTok);
-                // < > !  student exercise
+
+                case '<':
+                    return chkOpt('<', Token.ltTok, Token.lteqTok);
 
                 default:
                     error("Illegal character " + ch);
@@ -124,11 +162,11 @@ public class Lexer {
     } // next
 
     private boolean isLetter(char c) {
-        return (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z');
+        return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
     }
 
     private boolean isDigit(char c) {
-        return false;  // student exercise
+        return '0' <= c && c <= '9';
     }
 
     private void check(char c) {
@@ -139,16 +177,17 @@ public class Lexer {
     }
 
     private Token chkOpt(char c, Token one, Token two) {
-        return null;  // student exercise
+        return null;  // TODO student exercise
     }
 
     private String concat(String set) {
-        String r = "";
+        // NOTE: set 변수에 있는 것들은 allowed character. allowed character 들이 나오지 않을 때까지 읽어들인다.
+        StringBuilder r = new StringBuilder();
         do {
-            r += ch;
+            r.append(ch);
             ch = nextChar();
         } while (set.indexOf(ch) >= 0);
-        return r;
+        return r.toString();
     }
 
     public void error(String msg) {

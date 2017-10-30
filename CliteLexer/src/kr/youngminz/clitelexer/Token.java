@@ -1,6 +1,16 @@
-package kr.youngminz;
+package kr.youngminz.clitelexer;
 
 public class Token {
+
+    // NOTE: 이 클래스 변수들은 위에서부터 아래로 차근차근 eval 되기 때문에,
+    // 이 순서를 변경하면 NPE가 발생할 수 있다.
+
+    private static final int KEYWORDS = TokenType.Eof.ordinal();
+    private static final String[] reserved = new String[KEYWORDS];
+    private static Token[] token = new Token[KEYWORDS];
+
+    private TokenType type;
+    private String value = "";
 
     public static final Token eofTok = new Token(TokenType.Eof, "<<EOF>>");
     public static final Token boolTok = new Token(TokenType.Bool, "bool");
@@ -35,11 +45,6 @@ public class Token {
     public static final Token divideTok = new Token(TokenType.Divide, "/");
     public static final Token andTok = new Token(TokenType.And, "&&");
     public static final Token orTok = new Token(TokenType.Or, "||");
-    private static final int KEYWORDS = TokenType.Eof.ordinal();
-    private static final String[] reserved = new String[KEYWORDS];
-    private static Token[] token = new Token[KEYWORDS];
-    private TokenType type;
-    private String value = "";
 
     private Token(TokenType t, String v) {
         type = t;
