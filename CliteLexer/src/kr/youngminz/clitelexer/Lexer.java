@@ -7,8 +7,7 @@ import java.io.IOException;
 
 public class Lexer {
 
-    private final String letters = "abcdefghijklmnopqrstuvwxyz"
-            + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final String digits = "0123456789";
     private final char eolnCh = '\n';
     private final char eofCh = '\004';
@@ -18,7 +17,6 @@ public class Lexer {
     private String line = "";
     private int lineno = 0;
     private int col = 1;
-
 
     public Lexer(String fileName) { // source filename
         System.out.println(System.getProperty("user.dir"));
@@ -66,12 +64,16 @@ public class Lexer {
         do {
             if (isLetter(ch)) { // ident or keyword
                 String spelling = concat(letters + digits);
+                System.out.println("KEYWORD " + spelling);
                 return Token.keyword(spelling);
             } else if (isDigit(ch)) { // int or float literal
                 String number = concat(digits);
-                if (ch != '.')  // int Literal
+                if (ch != '.') {  // int Literal
+                    System.out.println("INT " + number);
                     return Token.mkIntLiteral(number);
+                }
                 number += concat(digits);
+                System.out.println("FLOAT " + number);
                 return Token.mkFloatLiteral(number);
             } else switch (ch) {
                 case ' ':
@@ -98,19 +100,23 @@ public class Lexer {
                     char ch1 = nextChar();
                     nextChar(); // get '
                     ch = nextChar();
+                    System.out.println("CHAR LITERAL " + ch1);
                     return Token.mkCharLiteral("" + ch1);
 
                 case eofCh:
+                    System.out.println("EOF");
                     return Token.eofTok;
 
                 case '+':
                     ch = nextChar();
+                    System.out.println("PLUS TOK " + ch);
                     return Token.plusTok;
 
                 // NOTE: 이렇게 그냥 체크 안 하고 읽기만 해도 되나.....?
                 // - * ( ) { } ; ,  student exercise
                 case '-':
                     ch = nextChar();
+                    System.out.println("PLUS TOK " + ch);
                     return Token.minusTok;
 
                 case '*':
@@ -148,6 +154,7 @@ public class Lexer {
                     check('|');
                     return Token.orTok;
 
+                // NOTE: 첫 번째 글자는 읽었다. 두 번째 문자가 무엇이냐에 따라 잘 처신하면 된다.
                 case '=':
                     return chkOpt('=', Token.assignTok,
                             Token.eqeqTok);
@@ -177,7 +184,18 @@ public class Lexer {
     }
 
     private Token chkOpt(char c, Token one, Token two) {
-        return null;  // TODO student exercise
+        if (one.value().length() == 1) {
+            return one;
+        } else if (two.value().length() == 1) {
+            return two;
+        } else if (one.value().length() > 1 && one.value().charAt(1) == c) {
+            return one;
+        } else if (two.value().length() > 1 && two.value().charAt(1) == c) {
+            return two;
+        } else {
+            error("Unknown operator (from Lexer.choOpt)");
+            return null;
+        }
     }
 
     private String concat(String set) {

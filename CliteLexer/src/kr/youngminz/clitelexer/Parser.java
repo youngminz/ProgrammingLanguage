@@ -27,12 +27,17 @@ public class Parser {
     private void error(TokenType tok) {
         System.err.println("Syntax error: expecting: " + tok
                 + "; saw: " + token);
+        for (StackTraceElement ste : Thread.currentThread().getStackTrace()) {
+            System.out.println(ste);
+        }
         System.exit(1);
     }
 
     private void error(String tok) {
-        System.err.println("Syntax error: expecting: " + tok
-                + "; saw: " + token);
+        System.err.println("Syntax error: expecting: " + tok + "; saw: " + token);
+        for (StackTraceElement ste : Thread.currentThread().getStackTrace()) {
+            System.out.println(ste);
+        }
         System.exit(1);
     }
 
@@ -42,26 +47,64 @@ public class Parser {
                 TokenType.LeftParen, TokenType.RightParen};
         for (TokenType aHeader : header) match(aHeader);
         match(TokenType.LeftBrace);
-        // TODO 이 사이에 프로그램이 들어간다.
+
+        declarations();
+        statements();
+
         match(TokenType.RightBrace);
         return null;  // TODO student exercise
     }
 
     private Declarations declarations() {
         // Declarations --> { Declaration }
-        return null;  // TODO student exercise
+        Declarations declarations = new Declarations();
+        while (token.type().equals(TokenType.Int) ||
+                token.type().equals(TokenType.Bool) ||
+                token.type().equals(TokenType.Float) ||
+                token.type().equals(TokenType.Char)) {
+
+            declaration(declarations);
+        }
+
+        return declarations;  // TODO student exercise
     }
 
     private void declaration(Declarations ds) {
         // Declaration  --> Type Identifier { , Identifier } ;
         // TODO student exercise
+
+        Type currentType = type();
+        // TODO 1차원 배열
+        while (!token.type().equals(TokenType.Semicolon)) {
+            token = lexer.next();
+            if (token.type().equals(TokenType.Identifier)) {
+                ds.add(new Declaration(new Variable(token.value()), currentType));
+            } else {
+                error("Identifier");
+            }
+            token = lexer.next();
+            if (!token.type().equals(TokenType.Semicolon) && !token.type().equals(TokenType.Comma)) {
+                error(",|;");
+            }
+        }
+        match(TokenType.Semicolon);
+        token = lexer.next();
     }
 
     private Type type() {
         // Type  -->  int | bool | float | char
-        Type t = null;
-        // TODO student exercise
-        return t;
+        if (token.type().equals(TokenType.Int)) {
+            return Type.INT;
+        } else if (token.type().equals(TokenType.Bool)) {
+            return Type.BOOL;
+        } else if (token.type().equals(TokenType.Float)) {
+            return Type.FLOAT;
+        } else if (token.type().equals(TokenType.Char)) {
+            return Type.CHAR;
+        } else {
+            error("Unknown Type (From Parser.type)");
+            return null;
+        }
     }
 
     private Statement statement() {
