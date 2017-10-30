@@ -19,7 +19,6 @@ public class Lexer {
     private int col = 1;
 
     public Lexer(String fileName) { // source filename
-        System.out.println(System.getProperty("user.dir"));
         try {
             input = new BufferedReader(new FileReader(fileName));
         } catch (FileNotFoundException e) {
@@ -32,7 +31,6 @@ public class Lexer {
         Lexer lexer = new Lexer(argv[0]);
         Token tok = lexer.next();
         while (tok != Token.eofTok) {
-            System.out.println(tok.toString());
             tok = lexer.next();
         }
     } // main
@@ -61,20 +59,24 @@ public class Lexer {
     }
 
     public Token next() { // Return next token
+        Token result;
         do {
             if (isLetter(ch)) { // ident or keyword
                 String spelling = concat(letters + digits);
-                System.out.println("KEYWORD " + spelling);
-                return Token.keyword(spelling);
+                result = Token.keyword(spelling);
+                System.out.println(result);
+                return result;
             } else if (isDigit(ch)) { // int or float literal
                 String number = concat(digits);
                 if (ch != '.') {  // int Literal
-                    System.out.println("INT " + number);
-                    return Token.mkIntLiteral(number);
+                    result = Token.mkIntLiteral(number);
+                    System.out.println(result);
+                    return result;
                 }
                 number += concat(digits);
-                System.out.println("FLOAT " + number);
-                return Token.mkFloatLiteral(number);
+                result = Token.mkFloatLiteral(number);
+                System.out.println(result);
+                return result;
             } else switch (ch) {
                 case ' ':
                 case '\t':
@@ -87,7 +89,11 @@ public class Lexer {
 
                 case '/':  // divide or comment
                     ch = nextChar();
-                    if (ch != '/') return Token.divideTok;
+                    if (ch != '/') {
+                        result = Token.divideTok;
+                        System.out.println(result);
+                        return result;
+                    }
                     // comment
                     // NOTE: /를 읽었는데 다음 문자도 /이면, 주석으로 처리하고 End of Line 까지 읽으면 됨.
                     do {
@@ -100,84 +106,118 @@ public class Lexer {
                     char ch1 = nextChar();
                     nextChar(); // get '
                     ch = nextChar();
-                    System.out.println("CHAR LITERAL " + ch1);
-                    return Token.mkCharLiteral("" + ch1);
+                    result = Token.mkCharLiteral("" + ch1);
+                    System.out.println(result);
+                    return result;
 
                 case eofCh:
-                    System.out.println("EOF");
-                    return Token.eofTok;
+                    result = Token.eofTok;
+                    System.out.println(result);
+                    return result;
 
                 case '+':
                     ch = nextChar();
-                    System.out.println("PLUS TOK " + ch);
-                    return Token.plusTok;
+                    result = Token.plusTok;
+                    System.out.println(result);
+                    return result;
 
                 // NOTE: 이렇게 그냥 체크 안 하고 읽기만 해도 되나.....?
                 // - * ( ) { } ; ,  student exercise
                 case '-':
                     ch = nextChar();
-                    System.out.println("PLUS TOK " + ch);
-                    return Token.minusTok;
+                    result = Token.minusTok;
+                    System.out.println(result);
+                    return result;
 
                 case '*':
                     ch = nextChar();
-                    return Token.multiplyTok;
+                    result = Token.multiplyTok;
+                    System.out.println(result);
+                    return result;
 
                 case '(':
                     ch = nextChar();
-                    return Token.leftParenTok;
+                    result = Token.leftParenTok;
+                    System.out.println(result);
+                    return result;
 
                 case ')':
                     ch = nextChar();
-                    return Token.rightParenTok;
+                    result = Token.rightParenTok;
+                    System.out.println(result);
+                    return result;
 
                 case '{':
                     ch = nextChar();
-                    return Token.leftBraceTok;
+                    result = Token.leftBraceTok;
+                    System.out.println(result);
+                    return result;
 
                 case '}':
                     ch = nextChar();
-                    return Token.rightBraceTok;
+                    result = Token.rightBraceTok;
+                    System.out.println(result);
+                    return result;
 
                 case '[':
                     ch = nextChar();
-                    return Token.leftBracketTok;
+                    result = Token.leftBracketTok;
+                    System.out.println(result);
+                    return result;
 
                 case ']':
                     ch = nextChar();
-                    return Token.rightBracketTok;
+                    result = Token.rightBracketTok;
+                    System.out.println(result);
+                    return result;
 
                 case ';':
                     ch = nextChar();
-                    return Token.semicolonTok;
+                    result = Token.semicolonTok;
+                    System.out.println(result);
+                    return result;
 
                 case ',':
                     ch = nextChar();
-                    return Token.commaTok;
+                    result = Token.commaTok;
+                    System.out.println(result);
+                    return result;
 
                 case '&':
                     check('&');
-                    return Token.andTok;
+                    result = Token.andTok;
+                    System.out.println(result);
+                    return result;
                 case '|':
                     check('|');
-                    return Token.orTok;
+                    result = Token.orTok;
+                    System.out.println(result);
+                    return result;
 
                 // NOTE: 첫 번째 글자는 읽었다. 두 번째 문자가 무엇이냐에 따라 잘 처신하면 된다.
                 case '=':
                     ch = nextChar();
-                    return chkOpt(ch, Token.assignTok, Token.eqeqTok);
+                    result = chkOpt(ch, Token.assignTok, Token.eqeqTok);
+                    System.out.println(result);
+                    return result;
 
                 case '<':
                     ch = nextChar();
-                    return chkOpt(ch, Token.ltTok, Token.lteqTok);
+                    result = chkOpt(ch, Token.ltTok, Token.lteqTok);
+                    System.out.println(result);
+                    return result;
 
                 case '>':
                     ch = nextChar();
-                    return chkOpt(ch, Token.gtTok, Token.gteqTok);
+                    result = chkOpt(ch, Token.gtTok, Token.gteqTok);
+                    System.out.println(result);
+                    return result;
 
                 case '!':
                     ch = nextChar();
-                    return chkOpt(ch, Token.notTok, Token.noteqTok);
+                    result = chkOpt(ch, Token.notTok, Token.noteqTok);
+                    System.out.println(result);
+                    return result;
 
                 default:
                     error("Illegal character " + ch);
@@ -201,18 +241,18 @@ public class Lexer {
     }
 
     private Token chkOpt(char c, Token one, Token two) {
-        if (one.value().length() == 1) {
-            return one;
-        } else if (two.value().length() == 1) {
-            return two;
-        } else if (one.value().length() > 1 && one.value().charAt(1) == c) {
+        if (one.value().length() > 1 && one.value().charAt(1) == c) {
             ch = nextChar();
             return one;
         } else if (two.value().length() > 1 && two.value().charAt(1) == c) {
             ch = nextChar();
             return two;
+        } else if (one.value().length() == 1) {
+            return one;
+        } else if (two.value().length() == 1) {
+            return two;
         } else {
-            error("Unknown operator (from Lexer.choOpt)");
+            error("invalid character");
             return null;
         }
     }

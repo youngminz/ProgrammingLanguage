@@ -1,5 +1,6 @@
 package kr.youngminz.clitelexer;
 
+
 public class Parser {
     // Recursive descent parser that inputs a C++Lite program and 
     // generates its abstract syntax.  Each method corresponds to
@@ -12,7 +13,6 @@ public class Parser {
     public Parser(Lexer ts) { // Open the C++Lite source program
         lexer = ts;                          // as a token stream, and
         token = lexer.next();            // retrieve its first Token
-        System.out.println(token);
     }
 
     private String match(TokenType t) { // * return the string of a token if it matches with t *
@@ -68,7 +68,7 @@ public class Parser {
             declaration(declarations);
         }
 
-        return declarations;  // TODO student exercise
+        return declarations;
     }
 
     private void declaration(Declarations ds) {
@@ -133,6 +133,7 @@ public class Parser {
         if (!token.type().equals(TokenType.LeftBrace)) {
             error(TokenType.LeftBrace);
         }
+        token = lexer.next();
         Block b = new Block();
         while (!token.type().equals(TokenType.RightBrace)) {
             b.members.add(statement());
@@ -165,12 +166,60 @@ public class Parser {
 
     private Conditional ifStatement() {
         // IfStatement --> if ( Expression ) Statement [ else Statement ]
-        return null;  // TODO student exercise
+
+        if (!token.type().equals(TokenType.If)) {
+            error(TokenType.If);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.LeftParen)) {
+            error(TokenType.LeftParen);
+        }
+
+        token = lexer.next();
+        Expression exp = expression();
+
+        if (!token.type().equals(TokenType.RightParen)) {
+            error(TokenType.RightParen);
+        }
+
+        token = lexer.next();
+
+        Statement state = statement();
+
+        if (token.type().equals(TokenType.Else)) {
+            token = lexer.next();
+            Statement elseStatement = statement();
+
+            return new Conditional(exp, state, elseStatement);
+        }
+        return new Conditional(exp, state);
     }
 
     private Loop whileStatement() {
         // WhileStatement --> while ( Expression ) Statement
-        return null;  // TODO student exercise
+
+        if (!token.type().equals(TokenType.While)) {
+            error(TokenType.While);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.LeftParen)) {
+            error(TokenType.LeftParen);
+        }
+
+        token = lexer.next();
+        Expression exp = expression();
+
+        if (!token.type().equals(TokenType.RightParen)) {
+            error(TokenType.RightParen);
+        }
+
+        token = lexer.next();
+
+        Statement state = statement();
+
+        return new Loop(exp, state);
     }
 
     private Expression expression() {
@@ -179,8 +228,10 @@ public class Parser {
 
         lhs = conjunction();
         if (!token.type().equals(TokenType.Or)) {
+            //token = lexer.next();
             return lhs;
         }
+        token = lexer.next();
 
         rhs = conjunction();
         return new Binary(new Operator(Operator.OR), lhs, rhs);
@@ -192,8 +243,10 @@ public class Parser {
 
         lhs = equality();
         if (!token.type().equals(TokenType.And)) {
+            //token = lexer.next();
             return lhs;
         }
+        token = lexer.next();
 
         rhs = equality();
         return new Binary(new Operator(Operator.AND), lhs, rhs);
@@ -205,9 +258,11 @@ public class Parser {
 
         lhs = relation();
         if (!isEqualityOp()) {
+            //token = lexer.next();
             return lhs;
         }
         String op = token.value();
+        token = lexer.next();
 
         rhs = relation();
         return new Binary(new Operator(op), lhs, rhs);
@@ -219,9 +274,11 @@ public class Parser {
 
         lhs = addition();
         if (!isRelationalOp()) {
+            //token = lexer.next();
             return lhs;
         }
         String op = token.value();
+        token = lexer.next();
 
         rhs = addition();
         return new Binary(new Operator(op), lhs, rhs);

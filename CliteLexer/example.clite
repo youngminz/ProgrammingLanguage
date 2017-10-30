@@ -1,24 +1,14 @@
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-// this is a comment to be ignored
-int main ( ) {
-
-// this is a comment to be ignored
-int a, b;
-bool c, d;
-a245=  53 +    b + 42.345;
-// a=b+c+b
-if (a245<=  (182957) Variable25.12 ==what1919$;
-for (i = 0; a < x; i++) {
-  a = a*2;
-}
-}
+int main() {
+   char c;
+   int i;
+   int even;
+   i=0;
+   even=0;
+   while (i < 10) {
+     i = i+1;
+     if (i == (i/2)*2) {
+       even = even +1;
+     }
+   }
+   i = even + 23;
+} // main
