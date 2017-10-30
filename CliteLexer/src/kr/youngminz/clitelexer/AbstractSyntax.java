@@ -40,7 +40,7 @@ class Declaration {
 }
 
 class Type {
-    // Type = int | bool | char | float 
+    // Type = int | bool | char | float
     final static Type INT = new Type("int");
     final static Type BOOL = new Type("bool");
     final static Type CHAR = new Type("char");
@@ -162,7 +162,7 @@ abstract class Value extends Expression {
     int intValue() {
         assert false : "should never reach here";
         return 0;
-    } // implementation of this function is unnecessary can can be removed.
+    } // implementation of this function is unnecessary and can be removed.
 
     boolean boolValue() {
         assert false : "should never reach here";

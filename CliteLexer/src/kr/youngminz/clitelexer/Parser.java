@@ -25,8 +25,7 @@ public class Parser {
     }
 
     private void error(TokenType tok) {
-        System.err.println("Syntax error: expecting: " + tok
-                + "; saw: " + token);
+        System.err.println("Syntax error: expecting: " + tok + "; saw: " + token);
         for (StackTraceElement ste : Thread.currentThread().getStackTrace()) {
             System.out.println(ste);
         }
@@ -42,7 +41,7 @@ public class Parser {
     }
 
     public Program program() {
-        // Program --> void main ( ) '{' Declarations Statements '}'
+        // Program --> int main ( ) '{' Declarations Statements '}'
         TokenType[] header = {TokenType.Int, TokenType.Main,
                 TokenType.LeftParen, TokenType.RightParen};
         for (TokenType aHeader : header) match(aHeader);
@@ -71,8 +70,6 @@ public class Parser {
 
     private void declaration(Declarations ds) {
         // Declaration  --> Type Identifier { , Identifier } ;
-        // TODO student exercise
-
         Type currentType = type();
         // TODO 1차원 배열
         while (!token.type().equals(TokenType.Semicolon)) {
@@ -84,10 +81,12 @@ public class Parser {
             }
             token = lexer.next();
             if (!token.type().equals(TokenType.Semicolon) && !token.type().equals(TokenType.Comma)) {
-                error(",|;");
+                error(",;");
             }
         }
-        match(TokenType.Semicolon);
+        if (!token.type().equals(TokenType.Semicolon)) {
+            error(TokenType.Semicolon);
+        }
         token = lexer.next();
     }
 
