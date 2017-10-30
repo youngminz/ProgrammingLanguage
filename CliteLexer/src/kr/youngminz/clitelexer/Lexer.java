@@ -49,7 +49,7 @@ public class Lexer {
             if (line == null) // at end of file
                 line = "" + eofCh;
             else {
-                // System.out.println(lineno + ":\t" + line);
+                System.out.println(lineno + ":\t" + line);
                 lineno++;
                 line += eolnCh;
             } // if line
