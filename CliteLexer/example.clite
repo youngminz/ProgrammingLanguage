@@ -1,14 +1,21 @@
 int main() {
-   char c;
-   int i;
-   int even;
-   i=0;
-   even=0;
-   while (i < 10) {
-     i = i+1;
-     if (i == (i/2)*2) {
-       even = even +1;
-     }
-   }
-   i = even + 23;
+    char c;
+    int i;
+    int even;
+    i = i + 1;
+    even = 0;
+    while (i<10) {
+        i = i + 1;
+        if (i == (i + 2) * 2 && even / 2 * 2 == even || i == even && even == even) {
+            even = even + 1;
+        }
+        else {
+            even = even - 1;
+        }
+
+        {
+            even = even - 1000;
+        }
+    }
+    i = even + 23;
 } // main

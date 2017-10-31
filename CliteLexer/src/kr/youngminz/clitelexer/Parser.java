@@ -47,14 +47,15 @@ public class Parser {
         for (TokenType aHeader : header) match(aHeader);
         match(TokenType.LeftBrace);
 
-        declarations();
+        Declarations decls = declarations();
 
+        Block statements = new Block();
         while (!token.type().equals(TokenType.RightBrace)) {
-            statement();
+            statements.members.add(statement());
         }
 
         match(TokenType.RightBrace);
-        return null;  // TODO student exercise
+        return new Program(decls, statements);
     }
 
     private Declarations declarations() {
@@ -84,7 +85,7 @@ public class Parser {
             }
             token = lexer.next();
             if (!token.type().equals(TokenType.Semicolon) && !token.type().equals(TokenType.Comma)) {
-                error(",;");
+                error("; | ,");
             }
         }
         if (!token.type().equals(TokenType.Semicolon)) {
@@ -104,7 +105,7 @@ public class Parser {
         } else if (token.type().equals(TokenType.Char)) {
             return Type.CHAR;
         } else {
-            error("Unknown Type (From Parser.type)");
+            error("Type");
             return null;
         }
     }
@@ -117,9 +118,9 @@ public class Parser {
             return block();
         } else if (token.type().equals(TokenType.Identifier)) { // Assignment
             return assignment();
-        } else if (token.value().equals("if")) {
+        } else if (token.type().equals(TokenType.If)) {
             return ifStatement();
-        } else if (token.value().equals("while")) {
+        } else if (token.type().equals(TokenType.While)) {
             return whileStatement();
         } else {
             error("Statement");

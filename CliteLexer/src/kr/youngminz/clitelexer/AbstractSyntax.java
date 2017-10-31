@@ -16,7 +16,8 @@ class Program {
     }
 
     void display() {
-        System.out.println("AST를 출력해야 함");
+        System.out.println(decpart);
+        System.out.println(body);
     }
 
 }
@@ -25,6 +26,16 @@ class Declarations extends ArrayList<Declaration> {
     // Declarations = Declaration*
     // (a list of declarations d1, d2, ..., dn)
 
+    @Override
+    public String toString() {
+        //return super.toString();
+        StringBuilder sb = new StringBuilder();
+        for (Declaration d : this) {
+            sb.append(d);
+            sb.append('\n');
+        }
+        return sb.toString();
+    }
 }
 
 class Declaration {
@@ -37,6 +48,10 @@ class Declaration {
         t = type;
     } // declaration */
 
+    @Override
+    public String toString() {
+        return String.format("Declaration(type=%s, variable=%s)", t, v);
+    }
 }
 
 class Type {
@@ -64,6 +79,10 @@ abstract class Statement {
 }
 
 class Skip extends Statement {
+    @Override
+    public String toString() {
+        return "Skip\n";
+    }
 }
 
 class Block extends Statement {
@@ -71,6 +90,17 @@ class Block extends Statement {
     //         (a Vector of members)
     public ArrayList<Statement> members = new ArrayList<Statement>();
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{\n");
+        for (Statement s : members) {
+            sb.append(s.toString());
+            sb.append('\n');
+        }
+        sb.append("}");
+        return sb.toString();
+    }
 }
 
 class Assignment extends Statement {
@@ -83,6 +113,10 @@ class Assignment extends Statement {
         source = e;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Assignment(variable=%s, expression=%s)", target, source);
+    }
 }
 
 class Conditional extends Statement {
@@ -103,6 +137,10 @@ class Conditional extends Statement {
         elsebranch = ep;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Conditional(test=%s)\n%s\nElse\n%s", test, thenbranch, elsebranch);
+    }
 }
 
 class Loop extends Statement {
@@ -115,6 +153,10 @@ class Loop extends Statement {
         body = b;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Loop(test=%s)\n%s", test, body);
+    }
 }
 
 abstract class Expression {
@@ -304,6 +346,10 @@ class Binary extends Expression {
         term2 = r;
     } // binary
 
+    @Override
+    public String toString() {
+        return String.format("(%s %s %s)", term1, op, term2);
+    }
 }
 
 class Unary extends Expression {
