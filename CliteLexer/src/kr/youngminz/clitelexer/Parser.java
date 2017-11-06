@@ -115,7 +115,7 @@ public class Parser {
         if (token.type().equals(TokenType.Semicolon)) { // ;
             return new Skip();
         } else if (token.type().equals(TokenType.LeftBrace)) { // Block
-            return block();
+            return statements();
         } else if (token.type().equals(TokenType.Identifier)) { // Assignment
             return assignment();
         } else if (token.type().equals(TokenType.If)) {
@@ -128,7 +128,7 @@ public class Parser {
         }
     }
 
-    private Block block() {
+    private Block statements() {
         // Block --> '{' Statements '}'
 
         if (!token.type().equals(TokenType.LeftBrace)) {

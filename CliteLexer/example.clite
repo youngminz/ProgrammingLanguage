@@ -1,21 +1,19 @@
-int main() {
-    char c;
-    int i;
-    int even;
-    i = i + 1;
-    even = 0;
-    while (i<10) {
-        i = i + 1;
-        if (i == (i + 2) * 2 && even / 2 * 2 == even || i == even && even == even) {
-            even = even + 1;
-        }
-        else {
-            even = even - 1;
-        }
+int main()
+{
+    int n, i, flag;
+    flag = 0;
 
+    while(i<=n/2)
+    {
+        // condition for nonprime number
+        if(n/i*i==i)
         {
-            even = even - 1000;
+            flag=1;
         }
     }
-    i = even + 23;
-} // main
+
+    if (flag==0)
+    flag = 1;
+    else
+    flag = 2;
+}
