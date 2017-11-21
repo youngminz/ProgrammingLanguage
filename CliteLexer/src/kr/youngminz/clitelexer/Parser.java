@@ -1,16 +1,16 @@
 package kr.youngminz.clitelexer;
 
 
-public class Parser {
+class Parser {
     // Recursive descent parser that inputs a C++Lite program and 
     // generates its abstract syntax.  Each method corresponds to
     // a concrete syntax grammar rule, which appears as a comment
     // at the beginning of the method.
 
-    Token token;          // current token from the input stream
-    Lexer lexer;
+    private Token token;          // current token from the input stream
+    private Lexer lexer;
 
-    public Parser(Lexer ts) { // Open the C++Lite source program
+    Parser(Lexer ts) { // Open the C++Lite source program
         lexer = ts;                          // as a token stream, and
         token = lexer.next();            // retrieve its first Token
     }
@@ -73,17 +73,29 @@ public class Parser {
     }
 
     private void declaration(Declarations ds) {
-        // Declaration  --> Type Identifier { , Identifier } ;
+        // Declaration  --> Type Identifier { , Identifier([Int]) } ;
         Type currentType = type();
         // TODO 1차원 배열
         while (!token.type().equals(TokenType.Semicolon)) {
             token = lexer.next();
             if (token.type().equals(TokenType.Identifier)) {
-                ds.add(new Declaration(new Variable(token.value()), currentType));
+                String token_value = token.value();
+                ds.add(new Declaration(new Variable(token_value), currentType));
+                token = lexer.next();
+                if (token.type().equals(TokenType.LeftBracket)) {
+                    token = lexer.next();
+                    if (token.type().equals(TokenType.IntLiteral)) {
+                        ds.add(new Declaration(new Variable(token_value), new Type(currentType.toString(), Integer.parseInt(token.value()))));
+                    }
+                    token = lexer.next();
+                    if (!token.type().equals(TokenType.RightBracket)) {
+                        error("]");
+                    }
+                    token = lexer.next();
+                }
             } else {
                 error("Identifier");
             }
-            token = lexer.next();
             if (!token.type().equals(TokenType.Semicolon) && !token.type().equals(TokenType.Comma)) {
                 error("; | ,");
             }

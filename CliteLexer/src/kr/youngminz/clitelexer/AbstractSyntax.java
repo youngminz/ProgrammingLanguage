@@ -63,13 +63,25 @@ class Type {
     // final static Type UNDEFINED = new Type("undef");
 
     private String id;
+    private boolean isArray = false;
+    private int arraySize = 0;
 
     private Type(String t) {
         id = t;
     }
 
+    public Type(String t, int arraysize) {
+        id = t;
+        isArray = true;
+        arraySize = arraysize;
+    }
+
     public String toString() {
+        if (isArray) {
+            return id + "[" + Integer.toString(arraySize) + "]";
+        }
         return id;
+
     }
 }
 

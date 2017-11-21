@@ -1,6 +1,6 @@
 int main()
 {
-    int n, i, flag;
+    int n, i, flag[2];
     flag = 0;
 
     while(i<=n/2)
@@ -12,7 +12,7 @@ int main()
         }
     }
 
-    if (flag==0)
+    if (flag<=0)
     flag = 1;
     else
     flag = 2;
