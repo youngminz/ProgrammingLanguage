@@ -80,7 +80,6 @@ class Parser {
             token = lexer.next();
             if (token.type().equals(TokenType.Identifier)) {
                 String token_value = token.value();
-                ds.add(new Declaration(new Variable(token_value), currentType));
                 token = lexer.next();
                 if (token.type().equals(TokenType.LeftBracket)) {
                     token = lexer.next();
@@ -92,6 +91,8 @@ class Parser {
                         error("]");
                     }
                     token = lexer.next();
+                } else {
+                    ds.add(new Declaration(new Variable(token_value), currentType));
                 }
             } else {
                 error("Identifier");
@@ -162,6 +163,27 @@ class Parser {
         String id = token.value();
 
         token = lexer.next();
+
+        boolean isArray = false;
+        int arrayIndex = -1;
+
+        if (token.type().equals(TokenType.LeftBracket)) {
+            isArray = true;
+            token = lexer.next();
+            if (token.type().equals(TokenType.IntLiteral)) {
+                //Variable var = new Variable(id)
+                arrayIndex = Integer.parseInt(token.value());
+                token = lexer.next();
+                if (token.type().equals(TokenType.RightBracket)) {
+                    token = lexer.next();
+                } else {
+                    error(TokenType.RightBracket);
+                }
+            } else {
+                error(TokenType.IntLiteral);
+            }
+        }
+
         if (!token.type().equals(TokenType.Assign)) {
             error(TokenType.Assign);
         }
@@ -174,12 +196,14 @@ class Parser {
         }
         token = lexer.next();
 
+        if (isArray) {
+            return new Assignment(new Variable(id + ":" + Integer.toString(arrayIndex)), exp);
+        }
+
         return new Assignment(new Variable(id), exp);
     }
 
     private Conditional ifStatement() {
-        // IfStatement --> if ( Expression ) Statement [ else Statement ]
-
         if (!token.type().equals(TokenType.If)) {
             error(TokenType.If);
         }
@@ -333,7 +357,26 @@ class Parser {
         //             | Type ( Expression )
         Expression e = null;
         if (token.type().equals(TokenType.Identifier)) {
-            e = new Variable(match(TokenType.Identifier));
+            //e = new Variable(match(TokenType.Identifier));
+            String token_value = token.value();
+            token = lexer.next();
+            if (token.type().equals(TokenType.LeftBracket)) {
+                token = lexer.next();
+                if (token.type().equals(TokenType.IntLiteral)) {
+                    int arrayIndex = Integer.parseInt(token.value());
+                    token = lexer.next();
+                    if (token.type().equals(TokenType.RightBracket)) {
+                        token = lexer.next();
+                        e = new Variable(token_value + ":" + Integer.toString(arrayIndex));
+                    } else {
+                        error(TokenType.RightBracket);
+                    }
+                } else {
+                    error(TokenType.IntLiteral);
+                }
+            } else {
+                e = new Variable(token_value);
+            }
         } else if (isLiteral()) {
             e = literal();
         } else if (token.type().equals(TokenType.LeftParen)) {

@@ -1,18 +1,18 @@
 int main()
 {
     int n, i, flag[2];
-    flag = 0;
+    flag[0]=1;
 
     while(i<=n/2)
     {
         // condition for nonprime number
         if(n/i*i==i)
         {
-            flag=1;
+            flag[1]=flag[0];
         }
     }
 
-    if (flag<=0)
+    if (flag[0]<=0)
     flag = 1;
     else
     flag = 2;
