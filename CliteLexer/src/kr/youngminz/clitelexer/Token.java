@@ -13,16 +13,16 @@ public class Token {
     private String value = "";
 
     public static final Token eofTok = new Token(TokenType.Eof, "<<EOF>>");
-    public static final Token boolTok = new Token(TokenType.Bool, "bool");
-    public static final Token charTok = new Token(TokenType.Char, "char");
-    public static final Token elseTok = new Token(TokenType.Else, "else");
-    public static final Token falseTok = new Token(TokenType.False, "false");
-    public static final Token floatTok = new Token(TokenType.Float, "float");
-    public static final Token ifTok = new Token(TokenType.If, "if");
-    public static final Token intTok = new Token(TokenType.Int, "int");
-    public static final Token mainTok = new Token(TokenType.Main, "main");
-    public static final Token trueTok = new Token(TokenType.True, "true");
-    public static final Token whileTok = new Token(TokenType.While, "while");
+    public static final Token boolTok = new Token(TokenType.Bool, "논리");
+    public static final Token charTok = new Token(TokenType.Char, "문자");
+    public static final Token elseTok = new Token(TokenType.Else, "아니면");
+    public static final Token falseTok = new Token(TokenType.False, "거짓");
+    public static final Token floatTok = new Token(TokenType.Float, "실수");
+    public static final Token ifTok = new Token(TokenType.If, "만약");
+    public static final Token intTok = new Token(TokenType.Int, "정수");
+    public static final Token mainTok = new Token(TokenType.Main, "시작");
+    public static final Token trueTok = new Token(TokenType.True, "참");
+    public static final Token whileTok = new Token(TokenType.While, "반복");
     public static final Token leftBraceTok = new Token(TokenType.LeftBrace, "{");
     public static final Token rightBraceTok = new Token(TokenType.RightBrace, "}");
     public static final Token leftBracketTok = new Token(TokenType.LeftBracket, "[");
@@ -45,6 +45,7 @@ public class Token {
     public static final Token divideTok = new Token(TokenType.Divide, "/");
     public static final Token andTok = new Token(TokenType.And, "&&");
     public static final Token orTok = new Token(TokenType.Or, "||");
+    public static final Token colonTok = new Token(TokenType.Colon,":");
 
     private Token(TokenType t, String v) {
         type = t;
