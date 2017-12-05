@@ -41,13 +41,14 @@ class Parser {
     }
 
     public Program program() {
-        // Program --> int main ( ) '{' Declarations Statements '}'
-        TokenType[] header = {TokenType.Int, TokenType.Main,
-                TokenType.LeftParen, TokenType.RightParen};
-        for (TokenType aHeader : header) match(aHeader);
+        match(TokenType.Decl);
         match(TokenType.LeftBrace);
 
         Declarations decls = declarations();
+
+        match(TokenType.RightBrace);
+        match(TokenType.Main);
+        match(TokenType.LeftBrace);
 
         Block statements = new Block();
         while (!token.type().equals(TokenType.RightBrace)) {
@@ -73,8 +74,12 @@ class Parser {
     }
 
     private void declaration(Declarations ds) {
-        // Declaration  --> Type Identifier { , Identifier([Int]) } ;
+        // Declaration  --> Type : Identifier { , Identifier([Int]) } ;
         Type currentType = type();
+        token = lexer.next();
+        if (!token.type().equals(TokenType.Colon)) {
+            error(TokenType.Colon);
+        }
         // TODO 1차원 배열
         while (!token.type().equals(TokenType.Semicolon)) {
             token = lexer.next();
@@ -404,6 +409,14 @@ class Parser {
             return value;
         } else if (token.type().equals(TokenType.FloatLiteral)) {
             FloatValue value = new FloatValue(Float.parseFloat(token.value()));
+            token = lexer.next();
+            return value;
+        } else if (token.type().equals(TokenType.True)) {
+            BoolValue value = new BoolValue(true);
+            token = lexer.next();
+            return value;
+        } else if (token.type().equals(TokenType.False)) {
+            BoolValue value = new BoolValue(false);
             token = lexer.next();
             return value;
         } else {

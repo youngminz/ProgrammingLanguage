@@ -177,6 +177,12 @@ public class Lexer {
                     System.out.println(result);
                     return result;
 
+                case ':':
+                    ch = nextChar();
+                    result = Token.colonTok;
+                    System.out.println(result);
+                    return result;
+
                 case ',':
                     ch = nextChar();
                     result = Token.commaTok;

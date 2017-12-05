@@ -20,6 +20,7 @@ public class Token {
     public static final Token floatTok = new Token(TokenType.Float, "실수");
     public static final Token ifTok = new Token(TokenType.If, "만약");
     public static final Token intTok = new Token(TokenType.Int, "정수");
+    public static final Token declTok = new Token(TokenType.Decl, "선언");
     public static final Token mainTok = new Token(TokenType.Main, "시작");
     public static final Token trueTok = new Token(TokenType.True, "참");
     public static final Token whileTok = new Token(TokenType.While, "반복");

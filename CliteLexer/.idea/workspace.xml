@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5239cfd2-a875-402c-93c1-fc26bf7dc835" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CLiteLexer.iml" afterPath="$PROJECT_DIR$/CLiteLexer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.clite" afterPath="$PROJECT_DIR$/example.clite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/AbstractSyntax.java" afterPath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/AbstractSyntax.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java" afterPath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java" afterPath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Token.java" afterPath="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Token.java" />
@@ -25,18 +23,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+            <state relative-caret-position="144">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="984">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="498">
+              <caret line="422" column="29" lean-forward="true" selection-start-line="422" selection-start-column="29" selection-end-line="422" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -45,13 +43,11 @@
       <file leaf-file-name="AbstractSyntax.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/AbstractSyntax.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2856">
-              <caret line="125" column="5" lean-forward="false" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+            <state relative-caret-position="182">
+              <caret line="272" column="4" lean-forward="false" selection-start-line="272" selection-start-column="4" selection-end-line="272" selection-end-column="4" />
               <folding>
-                <element signature="e#4071#4072#0" expanded="true" />
-                <element signature="e#4093#4094#0" expanded="true" />
-                <element signature="e#11709#11710#0" expanded="true" />
-                <element signature="e#11732#11733#0" expanded="true" />
+                <element signature="e#5950#5951#0" expanded="true" />
+                <element signature="e#5982#5983#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,17 +56,10 @@
       <file leaf-file-name="Lexer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="25" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="255" column="42" lean-forward="false" selection-start-line="255" selection-start-column="40" selection-end-line="255" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-                <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-                <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-                <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-                <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-                <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-                <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -79,34 +68,18 @@
       <file leaf-file-name="Token.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Token.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-                <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-                <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-                <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-                <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-                <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-                <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-                <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-                <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-                <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-                <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-                <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-                <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-                <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-                <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="example.clite" pinned="false" current-in-tab="true">
+      <file leaf-file-name="example.clite" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example.clite">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -115,8 +88,8 @@
       <file leaf-file-name="TokenType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/TokenType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <state relative-caret-position="228">
+              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -129,6 +102,7 @@
       <find>decla</find>
       <find>program</find>
       <find>conditional</find>
+      <find>==</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,10 +116,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java" />
-        <option value="$PROJECT_DIR$/example.clite" />
+        <option value="$PROJECT_DIR$/src/kr/youngminz/clitelexer/AbstractSyntax.java" />
         <option value="$PROJECT_DIR$/src/kr/youngminz/clitelexer/TokenType.java" />
         <option value="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Token.java" />
+        <option value="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java" />
+        <option value="$PROJECT_DIR$/example.clite" />
+        <option value="$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java" />
       </list>
     </option>
   </component>
@@ -210,6 +186,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="breakpo&#9;ACTION&#9;ViewBreakpoints&#10;breakpoint&#9;ACTION&#9;ViewBreakpoints" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -223,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -348,6 +326,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -357,9 +336,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17239584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -385,141 +364,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>47</line>
+          <line>36</line>
           <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>86</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>90</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Main.java</url>
-          <line>4</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Main.java</url>
-          <line>5</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>74</line>
-          <properties class="kr.youngminz.clitelexer.Parser">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java</url>
-          <line>12</line>
-          <properties class="kr.youngminz.clitelexer.Parser">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2760">
@@ -534,13 +391,6 @@
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -549,23 +399,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -574,10 +408,8 @@
         <state relative-caret-position="168">
           <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -611,10 +443,8 @@
         <state relative-caret-position="1992">
           <caret line="83" column="20" lean-forward="false" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
           <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,13 +455,6 @@
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -640,23 +463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2328">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -689,10 +496,8 @@
         <state relative-caret-position="1992">
           <caret line="83" column="20" lean-forward="false" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
           <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -703,13 +508,6 @@
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -718,23 +516,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2328">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -767,10 +549,8 @@
         <state relative-caret-position="1992">
           <caret line="83" column="20" lean-forward="false" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
           <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -781,13 +561,6 @@
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -796,23 +569,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2328">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -853,10 +610,8 @@
         <state relative-caret-position="2088">
           <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
           <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,23 +620,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2328">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -891,13 +630,6 @@
           <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -929,6 +661,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="1653" column="0" lean-forward="false" selection-start-line="1653" selection-start-column="0" selection-end-line="1653" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -961,10 +694,8 @@
         <state relative-caret-position="2856">
           <caret line="125" column="5" lean-forward="false" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
           <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -975,13 +706,6 @@
           <caret line="25" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -990,23 +714,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,89 +734,72 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/AbstractSyntax.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/invoke/MethodHandleNatives.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="125" column="5" lean-forward="false" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
-          <folding>
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#11709#11710#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example.clite">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512390090000" expanded="false" signature="18946:18952" ph=" }" />
-            <marker date="1512390090000" expanded="false" signature="18989:19000" ph=" { " />
-            <marker date="1512390090000" expanded="false" signature="19028:19034" ph=" }" />
-            <marker date="1512390090000" expanded="true" signature="19067:19201" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19258:19754" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="19794:20075" ph="{...}" />
-            <marker date="1512390090000" expanded="true" signature="20111:20364" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/TokenType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="228">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.clite">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Lexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="255" column="42" lean-forward="false" selection-start-line="255" selection-start-column="40" selection-end-line="255" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Token.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/AbstractSyntax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="272" column="4" lean-forward="false" selection-start-line="272" selection-start-column="4" selection-end-line="272" selection-end-column="4" />
           <folding>
-            <marker date="1512391278000" expanded="true" signature="3017:3211" ph="{...}" />
-            <marker date="1512391278000" expanded="true" signature="3258:3495" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="3555:3566" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3611:3617" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3668:3679" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3783:3794" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="3841:3847" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="3956:3962" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4007:4088" ph="{...}" />
-            <marker date="1512391278000" expanded="false" signature="4117:4128" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4140:4146" ph=" }" />
-            <marker date="1512391278000" expanded="false" signature="4173:4184" ph=" { " />
-            <marker date="1512391278000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512391278000" expanded="true" signature="4234:4345" ph="{...}" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5982#5983#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kr/youngminz/clitelexer/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="422" column="29" lean-forward="true" selection-start-line="422" selection-start-column="29" selection-end-line="422" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
