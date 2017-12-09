@@ -281,16 +281,11 @@ class Parser {
 
         if (token.type().equals(TokenType.LeftBracket)) {
             token = lexer.next();
-            if (!token.type().equals(TokenType.IntLiteral)) {
-                error(TokenType.IntLiteral);
-            }
-            int index = Integer.parseInt(token.value());
-            token = lexer.next();
+            Expression expr = expression();
             if (!token.type().equals(TokenType.RightBracket)) {
                 error(TokenType.RightBracket);
             }
-            varName = varName + ":" + Integer.toString(index);
-
+            varName = varName + "[" + expr.toString() + "]";
             token = lexer.next();
         }
 

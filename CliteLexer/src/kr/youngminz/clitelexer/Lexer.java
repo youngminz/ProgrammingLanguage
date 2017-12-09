@@ -22,7 +22,7 @@ public class Lexer {
         try {
             input = new BufferedReader(new FileReader(fileName));
         } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + fileName);
+            //System.out.println("File not found: " + fileName);
             System.exit(1);
         }
     }
@@ -49,7 +49,7 @@ public class Lexer {
             if (line == null) // at end of file
                 line = "" + eofCh;
             else {
-                System.out.println(lineno + ":\t" + line);
+                //System.out.println(lineno + ":\t" + line);
                 lineno++;
                 line += eolnCh;
             } // if line
@@ -64,18 +64,18 @@ public class Lexer {
             if (isLetter(ch)) { // ident or keyword
                 String spelling = concat(letters + digits);
                 result = Token.keyword(spelling);
-                System.out.println(result);
+                //System.out.println(result);
                 return result;
             } else if (isDigit(ch)) { // int or float literal
                 String number = concat(digits);
                 if (ch != '.') {  // int Literal
                     result = Token.mkIntLiteral(number);
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
                 }
                 number += concat(digits);
                 result = Token.mkFloatLiteral(number);
-                System.out.println(result);
+                //System.out.println(result);
                 return result;
             } else switch (ch) {
                 case ' ':
@@ -91,7 +91,7 @@ public class Lexer {
                     ch = nextChar();
                     if (ch != '/') {
                         result = Token.divideTok;
-                        System.out.println(result);
+                        //System.out.println(result);
                         return result;
                     }
                     // comment
@@ -107,18 +107,18 @@ public class Lexer {
                     nextChar(); // get '
                     ch = nextChar();
                     result = Token.mkCharLiteral("" + ch1);
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case eofCh:
                     result = Token.eofTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '+':
                     ch = nextChar();
                     result = Token.plusTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 // NOTE: 이렇게 그냥 체크 안 하고 읽기만 해도 되나.....?
@@ -126,103 +126,103 @@ public class Lexer {
                 case '-':
                     ch = nextChar();
                     result = Token.minusTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '*':
                     ch = nextChar();
                     result = Token.multiplyTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '(':
                     ch = nextChar();
                     result = Token.leftParenTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case ')':
                     ch = nextChar();
                     result = Token.rightParenTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '{':
                     ch = nextChar();
                     result = Token.leftBraceTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '}':
                     ch = nextChar();
                     result = Token.rightBraceTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '[':
                     ch = nextChar();
                     result = Token.leftBracketTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case ']':
                     ch = nextChar();
                     result = Token.rightBracketTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case ';':
                     ch = nextChar();
                     result = Token.semicolonTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case ':':
                     ch = nextChar();
                     result = Token.colonTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case ',':
                     ch = nextChar();
                     result = Token.commaTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '&':
                     check('&');
                     result = Token.andTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
                 case '|':
                     check('|');
                     result = Token.orTok;
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 // NOTE: 첫 번째 글자는 읽었다. 두 번째 문자가 무엇이냐에 따라 잘 처신하면 된다.
                 case '=':
                     ch = nextChar();
                     result = chkOpt(ch, Token.assignTok, Token.eqeqTok);
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '<':
                     ch = nextChar();
                     result = chkOpt(ch, Token.ltTok, Token.lteqTok);
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '>':
                     ch = nextChar();
                     result = chkOpt(ch, Token.gtTok, Token.gteqTok);
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 case '!':
                     ch = nextChar();
                     result = chkOpt(ch, Token.notTok, Token.noteqTok);
-                    System.out.println(result);
+                    //System.out.println(result);
                     return result;
 
                 default:
@@ -277,7 +277,7 @@ public class Lexer {
         System.err.print(line);
         System.err.println("Error: column " + col + " " + msg);
         for (StackTraceElement ste : Thread.currentThread().getStackTrace()) {
-            System.out.println(ste);
+            //System.out.println(ste);
         }
         System.exit(1);
     }
