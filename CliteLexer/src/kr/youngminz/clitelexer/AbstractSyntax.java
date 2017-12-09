@@ -70,7 +70,7 @@ class Declaration {
 class Type {
     // Type = int | bool | char | float
     final static Type INT = new Type("int");
-    final static Type BOOL = new Type("bool");
+    final static Type BOOL = new Type("boolean");
     final static Type CHAR = new Type("char");
     final static Type FLOAT = new Type("float");
     // final static Type UNDEFINED = new Type("undef");
