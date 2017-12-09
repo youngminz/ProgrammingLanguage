@@ -53,6 +53,10 @@ class Declaration {
 
     @Override
     public String toString() {
+        if(String.format("%s", t).contains("]")){
+            String temp = String.format("%s", t).substring(0, String.format("%s", t).indexOf("["));
+            return String.format("static %s[] %s = new %s;", temp, v, t);
+        }
         return String.format("static %s %s;", t, v);
     }
 }
@@ -188,6 +192,9 @@ class Variable extends Expression {
     }
 
     public String toString() {
+        if (id.contains(":")) {
+            return id.split(":")[0] + "[" + id.split(":")[1] + "]";
+        }
         return id;
     }
 
@@ -547,4 +554,3 @@ class Operator {
     }
 
 }
-
