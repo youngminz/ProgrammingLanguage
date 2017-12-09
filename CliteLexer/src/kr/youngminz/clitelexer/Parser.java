@@ -140,6 +140,10 @@ class Parser {
             return ifStatement();
         } else if (token.type().equals(TokenType.While)) {
             return whileStatement();
+        } else if (token.type().equals(TokenType.Print)) {
+            return printStatement();
+        } else if (token.type().equals(TokenType.Scan)) {
+            return scanStatement();
         } else {
             error("Statement");
             return null;
@@ -170,23 +174,16 @@ class Parser {
         token = lexer.next();
 
         boolean isArray = false;
-        int arrayIndex = -1;
-
+        Expression expr = null;
         if (token.type().equals(TokenType.LeftBracket)) {
             isArray = true;
             token = lexer.next();
-            if (token.type().equals(TokenType.IntLiteral)) {
-                //Variable var = new Variable(id)
-                arrayIndex = Integer.parseInt(token.value());
-                token = lexer.next();
-                if (token.type().equals(TokenType.RightBracket)) {
-                    token = lexer.next();
-                } else {
-                    error(TokenType.RightBracket);
-                }
-            } else {
-                error(TokenType.IntLiteral);
+
+            expr = expression();
+            if (!token.type().equals(TokenType.RightBracket)) {
+                error(TokenType.RightBracket);
             }
+            token = lexer.next();
         }
 
         if (!token.type().equals(TokenType.Assign)) {
@@ -201,8 +198,8 @@ class Parser {
         }
         token = lexer.next();
 
-        if (isArray) {
-            return new Assignment(new Variable(id + ":" + Integer.toString(arrayIndex)), exp);
+        if (isArray && expr != null) {
+            return new Assignment(new Variable(id + "[" + expr.toString() + "]") , exp);
         }
 
         return new Assignment(new Variable(id), exp);
@@ -262,6 +259,78 @@ class Parser {
         Statement state = statement();
 
         return new Loop(exp, state);
+    }
+
+    private Scan scanStatement() {
+        if (!token.type().equals(TokenType.Scan)) {
+            error(TokenType.Scan);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.LeftParen)) {
+            error(TokenType.LeftParen);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.Identifier)) {
+            error(TokenType.Identifier);
+        }
+
+        String varName = token.value();
+        token = lexer.next();
+
+        if (token.type().equals(TokenType.LeftBracket)) {
+            token = lexer.next();
+            if (!token.type().equals(TokenType.IntLiteral)) {
+                error(TokenType.IntLiteral);
+            }
+            int index = Integer.parseInt(token.value());
+            token = lexer.next();
+            if (!token.type().equals(TokenType.RightBracket)) {
+                error(TokenType.RightBracket);
+            }
+            varName = varName + ":" + Integer.toString(index);
+
+            token = lexer.next();
+        }
+
+        if (!token.type().equals(TokenType.RightParen)) {
+            error(TokenType.RightParen);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.Semicolon)) {
+            error(TokenType.Semicolon);
+        }
+        token = lexer.next();
+
+        return new Scan(new Variable(varName));
+    }
+
+    private Print printStatement() {
+        if (!token.type().equals(TokenType.Print)) {
+            error(TokenType.Print);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.LeftParen)) {
+            error(TokenType.LeftParen);
+        }
+
+        token = lexer.next();
+        Expression expr = expression();
+
+        if (!token.type().equals(TokenType.RightParen)) {
+            error(TokenType.RightParen);
+        }
+
+        token = lexer.next();
+        if (!token.type().equals(TokenType.Semicolon)) {
+            error(TokenType.Semicolon);
+        }
+
+        token = lexer.next();
+        return new Print(expr);
     }
 
     private Expression expression() {
@@ -367,18 +436,13 @@ class Parser {
             token = lexer.next();
             if (token.type().equals(TokenType.LeftBracket)) {
                 token = lexer.next();
-                if (token.type().equals(TokenType.IntLiteral)) {
-                    int arrayIndex = Integer.parseInt(token.value());
-                    token = lexer.next();
-                    if (token.type().equals(TokenType.RightBracket)) {
-                        token = lexer.next();
-                        e = new Variable(token_value + ":" + Integer.toString(arrayIndex));
-                    } else {
-                        error(TokenType.RightBracket);
-                    }
-                } else {
-                    error(TokenType.IntLiteral);
+                Expression expr = expression();
+
+                if (!token.type().equals(TokenType.RightBracket)){
+                    error(TokenType.RightBracket);
                 }
+                token = lexer.next();
+                e = new Variable(token_value + "[" + expr.toString() + "]");
             } else {
                 e = new Variable(token_value);
             }

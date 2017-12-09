@@ -23,6 +23,8 @@ public class Token {
     public static final Token declTok = new Token(TokenType.Decl, "선언");
     public static final Token mainTok = new Token(TokenType.Main, "시작");
     public static final Token trueTok = new Token(TokenType.True, "참");
+    public static final Token printTok = new Token(TokenType.Print, "출력");
+    public static final Token scanTok = new Token(TokenType.Scan, "입력");
     public static final Token whileTok = new Token(TokenType.While, "반복");
     public static final Token leftBraceTok = new Token(TokenType.LeftBrace, "{");
     public static final Token rightBraceTok = new Token(TokenType.RightBrace, "}");

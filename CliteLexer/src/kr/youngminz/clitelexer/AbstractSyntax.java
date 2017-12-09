@@ -16,11 +16,17 @@ class Program {
     }
 
     void display() {
+        System.out.println("import java.util.Scanner;");
+        System.out.println("class Main {");
+        System.out.println("private static Scanner scanner = new Scanner(System.in);");
+        System.out.println("private static boolean scan(boolean b) { return scanner.nextBoolean(); }");
+        System.out.println("private static int scan(int i) { return scanner.nextInt(); }");
+        System.out.println("private static char scan(char c) { return scanner.next().trim().charAt(0); }");
+        System.out.println("private static double scan(double d) { return scanner.nextDouble(); }");
         System.out.println(decpart);
-        System.out.println("class Program {");
         System.out.println("public static void main(String[] args)");
-        System.out.println("}");
         System.out.println(body);
+        System.out.println("}");
     }
 
 }
@@ -175,6 +181,32 @@ class Loop extends Statement {
     @Override
     public String toString() {
         return String.format("while%s\n%s", test, body);
+    }
+}
+
+class Print extends Statement {
+    Expression body;
+
+    Print(Expression s) {
+        body = s;
+    }
+
+    @Override
+    public String toString() {
+        return "System.out.println(" + body + ");";
+    }
+}
+
+class Scan extends Statement {
+    Variable var;
+
+    Scan(Variable v) {
+        var = v;
+    }
+
+    @Override
+    public String toString() {
+        return var + " = scan(" + var + ");";
     }
 }
 

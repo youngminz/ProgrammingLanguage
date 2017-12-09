@@ -12,7 +12,7 @@ package kr.youngminz.clitelexer;
 }*/
 
 public enum TokenType {
-     Bool, Char, Else, False, Float,
+     Print, Scan, Bool, Char, Else, False, Float,
      If, Int, Main, Decl, True, While,
      Eof, LeftBrace, RightBrace, LeftBracket, RightBracket,
      LeftParen, RightParen, Semicolon, Comma, Assign,
