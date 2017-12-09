@@ -17,6 +17,9 @@ class Program {
 
     void display() {
         System.out.println(decpart);
+        System.out.println("class Program {");
+        System.out.println("public static void main(String[] args)");
+        System.out.println("}");
         System.out.println(body);
     }
 
@@ -50,7 +53,7 @@ class Declaration {
 
     @Override
     public String toString() {
-        return String.format("Declaration(type=%s, variable=%s)", t, v);
+        return String.format("static %s %s;", t, v);
     }
 }
 
@@ -127,7 +130,7 @@ class Assignment extends Statement {
 
     @Override
     public String toString() {
-        return String.format("Assignment(variable=%s, expression=%s)", target, source);
+        return String.format("%s = %s;", target, source);
     }
 }
 
@@ -151,7 +154,7 @@ class Conditional extends Statement {
 
     @Override
     public String toString() {
-        return String.format("Conditional(test=%s)\n%s\nElse\n%s", test, thenbranch, elsebranch);
+        return String.format("if%s\n%s\nelse\n%s", test, thenbranch, elsebranch);
     }
 }
 
@@ -167,7 +170,7 @@ class Loop extends Statement {
 
     @Override
     public String toString() {
-        return String.format("Loop(test=%s)\n%s", test, body);
+        return String.format("while%s\n%s", test, body);
     }
 }
 
@@ -393,7 +396,7 @@ class Operator {
     final static String MINUS = "-";
     final static String TIMES = "*";
     final static String DIV = "/";
-    // UnaryOp = !    
+    // UnaryOp = !
     final static String NOT = "!";
     final static String NEG = "-";
     // CastOp = int | float | char
@@ -413,7 +416,7 @@ class Operator {
     final static String INT_MINUS = "INT-";
     final static String INT_TIMES = "INT*";
     final static String INT_DIV = "INT/";
-    // UnaryOp = !    
+    // UnaryOp = !
     final static String INT_NEG = "-";
     // RelationalOp = < | <= | == | != | >= | >
     final static String FLOAT_LT = "FLOAT<";
@@ -427,7 +430,7 @@ class Operator {
     final static String FLOAT_MINUS = "FLOAT-";
     final static String FLOAT_TIMES = "FLOAT*";
     final static String FLOAT_DIV = "FLOAT/";
-    // UnaryOp = !    
+    // UnaryOp = !
     final static String FLOAT_NEG = "-";
     // RelationalOp = < | <= | == | != | >= | >
     final static String CHAR_LT = "CHAR<";
@@ -544,3 +547,4 @@ class Operator {
     }
 
 }
+
