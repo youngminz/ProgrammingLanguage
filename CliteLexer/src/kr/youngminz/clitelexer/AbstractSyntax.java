@@ -106,7 +106,7 @@ abstract class Statement {
 class Skip extends Statement {
     @Override
     public String toString() {
-        return "Skip";
+        return ";";
     }
 }
 
