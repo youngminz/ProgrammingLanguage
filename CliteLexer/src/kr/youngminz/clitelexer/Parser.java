@@ -2,7 +2,7 @@ package kr.youngminz.clitelexer;
 
 
 class Parser {
-    // Recursive descent parser that inputs a C++Lite program and 
+    // Recursive descent parser that inputs a C++Lite program and
     // generates its abstract syntax.  Each method corresponds to
     // a concrete syntax grammar rule, which appears as a comment
     // at the beginning of the method.

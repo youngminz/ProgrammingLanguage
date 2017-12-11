@@ -1,3 +1,4 @@
+
 package kr.youngminz.clitelexer;
 
 // Abstract syntax for the language C++Lite,
@@ -76,7 +77,7 @@ class Type {
     // final static Type UNDEFINED = new Type("undef");
 
     private String id;
-    private boolean isArray = false;
+    public boolean isArray = false;
     private int arraySize = 0;
 
     private Type(String t) {
@@ -215,6 +216,7 @@ abstract class Expression {
 
 }
 
+
 class Variable extends Expression {
     // Variable = String id
     private String id;
@@ -227,6 +229,7 @@ class Variable extends Expression {
         if (id.contains(":")) {
             return id.split(":")[0] + "[" + id.split(":")[1] + "]";
         }
+
         return id;
     }
 
